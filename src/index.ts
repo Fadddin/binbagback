@@ -20,6 +20,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/users', userRoutes);
 
+app.get('/', (req, res) => {
+    res.json("Up and running!");
+})
+
 
 mongoose.connect(process.env.MONGO_URI!)
   .then(() => console.log('MongoDB connected'))
